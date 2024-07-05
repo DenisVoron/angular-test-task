@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-test-task-two": {
+    "angular-test-task": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/angular-test-task-two",
+            "outputPath": "dist/",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": ["zone.js"],
@@ -55,10 +55,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-test-task-two:build:production"
+              "buildTarget": "angular-test-task:build:production"
             },
             "development": {
-              "buildTarget": "angular-test-task-two:build:development"
+              "buildTarget": "angular-test-task:build:development"
             }
           },
           "defaultConfiguration": "development"
