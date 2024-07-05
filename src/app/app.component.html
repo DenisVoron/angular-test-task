@@ -1,0 +1,17 @@
+<header class="w-[100vw]">
+  <div
+    class="shadow-2xl bg-amber-500 p-4 m-auto text-3xl font-extrabold text-slate-100"
+  >
+    <p class="w-[300px] m-auto text-center no-underline hover:italic">
+      {{ title }}
+    </p>
+  </div>
+</header>
+<main>
+  <div class="container mx-auto py-4">
+    <app-input-section
+      (onCheckString)="changeCheckString($event)"
+    ></app-input-section>
+    <app-status-section [statusString]="statusString"></app-status-section>
+  </div>
+</main>
