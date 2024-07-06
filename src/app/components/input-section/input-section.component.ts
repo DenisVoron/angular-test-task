@@ -13,12 +13,14 @@ export class InputSectionComponent implements OnDestroy {
   checkInput = new Subject<string>();
 
   constructor() {
-    this.checkInput.pipe(debounceTime(500)).subscribe((checkString: string) => {
-      this.onCheckString.emit(checkString);
-    });
+    this.checkInput
+      .pipe(debounceTime(500))
+      .subscribe((checkString: string): void => {
+        this.onCheckString.emit(checkString);
+      });
   }
 
-  changeCheckString(e: Event) {
+  changeCheckString(e: Event): void {
     const eventValue = (e?.target as HTMLInputElement).value;
     this.checkInput.next(eventValue);
   }

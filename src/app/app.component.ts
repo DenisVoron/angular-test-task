@@ -14,19 +14,19 @@ import { StatusSectionComponent } from './components/status-section/status-secti
   providedIn: 'root',
 })
 export class AppComponent {
-  title = 'Password complexity checker';
+  public title = 'Password complexity checker';
 
   checkString: string = '';
   statusString: string = 'empty';
 
-  constructor(private checkStringService: CheckStringService) { };
+  constructor(private checkStringService: CheckStringService) {}
 
-  changeCheckString(checkString: string) {
+  changeCheckString(checkString: string): void {
     this.checkString = checkString;
     this.sendStatusStringForChecked(this.checkString);
   }
 
-  sendStatusStringForChecked(statusString: string) {
+  sendStatusStringForChecked(statusString: string): void {
     this.statusString = this.checkStringService.checkPassword(statusString);
   }
 }
